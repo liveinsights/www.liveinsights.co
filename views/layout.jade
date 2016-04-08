@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    block stylesheets
+    //jQuery
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+    //Date Format
+    script(src="/js/plugins/date/jquery.jqia.dateFormat.js")
+    script
+      $(document).ready(function() {
+      $.getScript("/js/global.js", function(e){ includeFooter( new Date() ) });
+      });
+
+    block javascripts
+
+  body
+    block content
+
+  footer
+    center
+      &copy; <span></span>
