@@ -1,24 +1,35 @@
-# ExpressJS 4.0 for Openshift
+# ExpressJS on Plesk
 
-Boilerplate template for creating an ExpressJS 4.0 web server on Openshift. This is perfect for managers or developers who want to host a small-scale app (< 10k requests a day) and not pay a single dime.  Yes, free!
+# Step 1 - Create HTTP Basic Credentials on Github
 
-### STEPS
+a. Create New [Personal Access Token](https://github.com/settings/tokens/new)
 
-1. Create an [Openshift](http://openshift.com) account.
--  Add an [application](https://openshift.redhat.com/app/console/application_types)
--  Select [NodeJS latest](https://openshift.redhat.com/app/console/application_type/quickstart!243) with "no scaling"
--  Clone your site to your local computer
--  Copy over these files and re-upload
+b. Select all ```repo``` and ```workflow``` for Scopes.
+
+# Step 2 - Add Github Repo to Plesk
+
+a. [Log into Rootpal](https://web-wamp.rootpal.com/)
+
+b. [Add Repository](https://web-wamp.rootpal.com/modules/git/index.php/domain/repositories)
+
+c. Add HTTP Basic Credentials
+
+d. Set Deployment settings **Server Path** to ```/httpdocs```
+
+# Step 3 - Enable NodeJS
+
+a. [Review Your Deployment Dashboard](https://web-wamp.rootpal.com:8443/modules/git/index.php/domain/repositories/)
+
+# Step 4 - Change the Document & Application Root
+
+a. [Go to Hosting Settings](https://web-wamp.rootpal.com/smb/web/settings/id/) and
+
+b. [Enable NodeJS](https://web-wamp.rootpal.com/modules/nodejs/index.php/domain/index)
 
 
-### What is ```sslforfree.js```?
+# Resources
 
-If you want your site to be HTTPS-ready and you don't want to pay for it, you can use this template with [SSL for Free](https://www.sslforfree.com/). All you need to do is:
-
-
-- Upload the JWT tokens (produced by [SSL for Free](https://www.sslforfree.com/)) to ```~/app-root/data/.well-known/acme-challenge```
-- Modify ```start.js``` to point to ``sslforfree.js`` instead of ```app.js```
-- Restart your Openshift server
-
-
-
+* [NodeJS Plesk Website Management Support](https://docs.plesk.com/en-US/obsidian/administrator-guide/website-management/nodejs-support.76652/) ([Archive](https://archive.ph/lh2po))
+* [NodeJS Plesk Administration](https://docs.plesk.com/en-US/obsidian/administrator-guide/plesk-administration/using-nodejs.76658/) ([Archive](https://archive.ph/v1nAG))
+* [How to Host NodeJS on Onyx](https://www.plesk.com/blog/product-technology/node-js-plesk-onyx/) ([Archive](https://archive.ph/uYIzZ))
+* [How to Host ExpressJS on Onyx](https://github.com/plesk/node-express)
