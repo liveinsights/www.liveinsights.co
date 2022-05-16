@@ -33,3 +33,4 @@ b. [Enable NodeJS](https://web-wamp.rootpal.com/modules/nodejs/index.php/domain/
 * [NodeJS Plesk Administration](https://docs.plesk.com/en-US/obsidian/administrator-guide/plesk-administration/using-nodejs.76658/) ([Archive](https://archive.ph/v1nAG))
 * [How to Host NodeJS on Onyx](https://www.plesk.com/blog/product-technology/node-js-plesk-onyx/) ([Archive](https://archive.ph/uYIzZ))
 * [How to Host ExpressJS on Onyx](https://github.com/plesk/node-express)
+* [Improve NodeJS App Performance with Clustering](https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html)
