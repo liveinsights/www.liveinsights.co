@@ -5,6 +5,7 @@
   "private": true,
   "main": "start.js",
   "scripts": {
+    "dev": "nodemon start.js",
     "start": "node --use_strict start.js"
   },
   "author": "Chris Mendez @chrismendezinla",
@@ -16,10 +17,13 @@
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "morgan": "^1.7.0",
+    "os": "^0.1.2",
     "pug": "^3.0.2",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "jake": "^10.8.5",
+    "loadtest": "^5.2.0",
     "nodemon": "^2.0.16"
   }
 }

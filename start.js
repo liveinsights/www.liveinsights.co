@@ -1,3 +1,4 @@
+const totalCPUs = require("os").cpus().length;
 const cluster = require('cluster'),
       stopSignals = [
         'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
@@ -19,7 +20,11 @@ cluster.on('disconnect', function(worker) {
 
 if (cluster.isMaster) {
   const workerCount = process.env.NODE_CLUSTER_WORKERS || 4;
+
   console.log(`Starting ${workerCount} workers...`);
+  console.log(`Number of CPUs: ${totalCPUs}`);
+  console.log(`Master ${process.pid} is running`);
+
   for (let i = 0; i < workerCount; i++) {
     cluster.fork();
   }
