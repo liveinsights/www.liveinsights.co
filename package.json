@@ -1,7 +1,7 @@
 {
-  "name": "openshift-expressjs-template",
+  "name": "openshift-template",
   "version": "1.0.1",
-  "description": "Custom ExpressJS for Openshift",
+  "description": "Custom ExpressJS for Plesk",
   "private": true,
   "main": "start.js",
   "scripts": {
@@ -14,8 +14,11 @@
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
-    "jade": "^1.11.0",
     "morgan": "^1.7.0",
+    "pug": "^3.0.2",
     "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
