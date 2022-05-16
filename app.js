@@ -1,35 +1,44 @@
-const http         = require('http'),
-      fs           = require('fs'),
-      path         = require('path'),
-      contentTypes = require('./utils/content-types'),
-      sysInfo      = require('./utils/sys-info'),
-      
-      express      = require('express'),
-      favicon      = require('serve-favicon'),
-      logger       = require('morgan'),
-      cookieParser = require('cookie-parser'),
-      bodyParser   = require('body-parser'),
-      env          = process.env,
+const createError = require('http-errors');
+const express      = require('express');
+const favicon      = require('serve-favicon');
+const logger       = require('morgan');
+const bodyParser   = require('body-parser');
+const cookieParser = require('cookie-parser');
+const path         = require('path');
 
-      routes = require('./routes/index'),
-      users = require('./routes/users')
+const routes = require('./routes/index');
+const users = require('./routes/users');
 
-var app = express();
+const app = express();
 
-app.locals.pretty = true;  
+/* ** ** ** ** ** ** **
+Custom Config Begins
+* ** ** ** ** ** ** **/
+var env    = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var config = require('./config/config.js.dist')[env]
+console.log("~~~~YOU ARE IN: [", env, "] ENVIRONMENT~~~~")
 
-app.set('port', env.PORT || 8080);
-app.set('ipaddress', env.OPENSHIFT_NODEJS_IP);
+app.locals.pretty = true;
+app.set('port', config.port);
+app.set('ipaddress', config.ip);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
+// Favicon
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+// Morgan
 app.use(logger('dev'));
+
+// Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -50,11 +59,8 @@ app.use(parallel([
 ]));
 
 /* ** ** ** ** ** ** **
-* Old Way
+* Custom Error handling
 * ** ** ** ** ** ** **/
-//app.use('/', routes);
-//app.use('/users', users);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -62,10 +68,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
-
-// development error handler
-// will print stacktrace
+// development error handler will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
@@ -76,22 +79,21 @@ if (app.get('env') === 'development') {
   });
 }
 
-// production error handler
-// no stacktraces leaked to user
+// production error handler no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {}
+    error: err
+    //error: {}
   });
 });
-
 
 module.exports = app;
 
 /* ** ** ** ** ** ** **
 * App Server Listening
 * ** ** ** ** ** ** **/
-app.listen(app.get('port'), app.get('ipaddress'), function() {  
-      console.log("Node app is running at localhost:" + app.get('port'))
+app.listen(app.get('port'), app.get('ipaddress'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
 });
