@@ -11,15 +11,16 @@
   "author": "Chris Mendez @chrismendezinla",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.0.0-rc.3",
-    "body-parser": "^1.15.0",
-    "cluster": "^0.7.7",
-    "cookie-parser": "^1.4.1",
-    "express": "^4.13.4",
-    "morgan": "^1.7.0",
-    "os": "^0.1.2",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
     "pug": "^3.0.2",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.5.0",
+    "cluster": "^0.7.7",
+    "os": "^0.1.2"
   },
   "devDependencies": {
     "jake": "^10.8.5",
