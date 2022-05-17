@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./bin/www",
-    "start": "node --use_strict start.js"
+    "start": "node app.js"
   },
   "author": "Chris Mendez @chrismendezinla",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.0",
     "cookie-parser": "~1.4.4",

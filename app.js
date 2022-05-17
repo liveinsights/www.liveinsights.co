@@ -63,8 +63,9 @@ app.use(parallel([
 * ** ** ** ** ** ** **/
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
+  // var err = new Error('Not Found');
+  // err.status = 404;
+  var err = createError(404, "Not Found");
   next(err);
 });
 
