@@ -8,7 +8,7 @@ const techStack = JSON.stringify( packageJSON['dependencies'], null, 4 )
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'ExpressJS on Plesk', techStack: techStack });
+  res.render('index', { title: 'LiveInsights' });
 });
 
 /** ** ** ** ** ** ** ** ** ** ** **
