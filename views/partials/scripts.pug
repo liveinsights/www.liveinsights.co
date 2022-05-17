@@ -1,0 +1,25 @@
+//Global jQuery
+script(type="text/javascript", charset="utf-8", src='/vendor/jquery/dist/jquery.min.js')
+//Global Angular
+script(type="text/javascript", charset="utf-8", src='/vendor/angular/angular.js')
+script(type="text/javascript", charset="utf-8", src='/vendor/angular-resource/angular-resource.js')
+script(type="text/javascript", charset="utf-8", src='/vendor/angular-route/angular-route.js')
+//App Specific Angular
+script(type="text/javascript", charset="utf-8", src='/app/app.js')
+script(type="text/javascript", charset="utf-8", src='/app/main/appMainCtrl.js')
+script(type="text/javascript", charset="utf-8", src='/app/account/appNavLoginCtrl.js')
+
+//Custom Stuff
+script(type="text/javascript", charset="utf-8", src="/js/jquery.min.js")
+script(type="text/javascript", charset="utf-8", src="/js/woozy.js")
+script(type="text/javascript", charset="utf-8", src="/js/jquery.countTo.js")
+script(type="text/javascript", charset="utf-8", src="/js/form.js")
+script(type="text/javascript", charset="utf-8", src="/js/modernizr.js")
+script(type="text/javascript", charset="utf-8", src="/js/analytics.js")
+script.
+   $(document).ready(function(){
+    $(window).load(function () { 
+    $('.loading').fadeOut();
+    });
+    $('.timer').countTo();
+   });

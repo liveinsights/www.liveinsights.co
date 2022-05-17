@@ -1,8 +1,39 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
-  p NPM Stack
-  pre.
-    #{techStack}
+block stylesheets
+  style(type="text/css", media="screen")
+
+block javascripts
+  script
+
+block main-content
+  // preloader
+  .loading
+    img.loading-gif(src="/images/preloader2.gif", alt="preloader2.gif")
+  
+  //NAVIGATION
+  include partials/navigation
+
+  //MAST HEAD
+  include content/header
+
+  //ABOUT
+  include content/about
+
+  //TEAM
+  //include content/team
+
+  //WHAT WE DO
+  include content/service
+
+  //FUN FACTS
+  //include partials/funfacts
+
+  //Plans
+  include content/plans
+
+  //CONTACT
+  include partials/contact
+
+  //OUR LOCATION
+  //include partials/location

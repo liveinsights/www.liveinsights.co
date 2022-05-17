@@ -11,15 +11,16 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.x",
+    "bower": "^1.8.14",
+    "cluster": "^0.7.7",
     "cookie-parser": "~1.4.x",
     "debug": "~2.6.x",
     "express": "~4.16.x",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "os": "^0.1.2",
     "pug": "^3.0.2",
-    "serve-favicon": "^2.5.0",
-    "cluster": "^0.7.7",
-    "os": "^0.1.2"
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "jake": "^10.8.5",
