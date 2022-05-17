@@ -55,7 +55,7 @@ function parallel(middlewares) {
 
 app.use(parallel([
   app.use('/users', users),
-  app.use('/', routes)
+  app.use('/', routes )
 ]));
 
 /* ** ** ** ** ** ** **

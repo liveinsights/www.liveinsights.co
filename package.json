@@ -1,6 +1,6 @@
 {
   "name": "expressjs-for-plesk-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom ExpressJS for Plesk",
   "private": true,
   "scripts": {
@@ -10,10 +10,10 @@
   "author": "Chris Mendez @chrismendezinla",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.20.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
+    "body-parser": "^1.20.x",
+    "cookie-parser": "~1.4.x",
+    "debug": "~2.6.x",
+    "express": "~4.16.x",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pug": "^3.0.2",
