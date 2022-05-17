@@ -1,11 +1,10 @@
 {
-  "name": "openshift-template",
+  "name": "expressjs-for-plesk-template",
   "version": "1.0.1",
   "description": "Custom ExpressJS for Plesk",
   "private": true,
-  "main": "start.js",
   "scripts": {
-    "dev": "nodemon start.js",
+    "dev": "nodemon ./bin/www",
     "start": "node --use_strict start.js"
   },
   "author": "Chris Mendez @chrismendezinla",
