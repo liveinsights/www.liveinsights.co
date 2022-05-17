@@ -4,8 +4,8 @@
   "description": "Custom ExpressJS for Plesk",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./bin/www",
-    "start": "node app.js"
+    "dev": "nodemon app.js",
+    "start": "node start.js"
   },
   "author": "Chris Mendez @chrismendezinla",
   "license": "MIT",
