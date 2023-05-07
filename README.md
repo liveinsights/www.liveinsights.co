@@ -1,38 +1,38 @@
-# ExpressJS on Plesk
+# create-svelte
 
-For this demo, I am using Rootpal's Implementation of Plesk. 
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-# Step 1 - Create HTTP Basic Credentials on Github
+## Creating a project
 
-a. Create New [Personal Access Token](https://github.com/settings/tokens/new)
+If you're seeing this, you've probably already done this step. Congrats!
 
-b. Select all ```repo``` and ```workflow``` for Scopes.
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-# Step 2 - Add Github Repo to Plesk
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-a. [Log into Rootpal](https://web-wamp.rootpal.com/)
+## Developing
 
-b. [Add Repository](https://web-wamp.rootpal.com/modules/git/index.php/domain/repositories)
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-c. Add HTTP Basic Credentials
+```bash
+npm run dev
 
-d. Set Deployment settings **Server Path** to ```/httpdocs```
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-# Step 3 - Enable NodeJS
+## Building
 
-a. [Review Your Deployment Dashboard](https://web-wamp.rootpal.com:8443/modules/git/index.php/domain/repositories/)
+To create a production version of your app:
 
-# Step 4 - Change the Document & Application Root
+```bash
+npm run build
+```
 
-a. [Go to Hosting Settings](https://web-wamp.rootpal.com/smb/web/settings/id/) and
+You can preview the production build with `npm run preview`.
 
-b. [Enable NodeJS](https://web-wamp.rootpal.com/modules/nodejs/index.php/domain/index)
-
-
-# Resources
-
-* [NodeJS Plesk Website Management Support](https://docs.plesk.com/en-US/obsidian/administrator-guide/website-management/nodejs-support.76652/) ([Archive](https://archive.ph/lh2po))
-* [NodeJS Plesk Administration](https://docs.plesk.com/en-US/obsidian/administrator-guide/plesk-administration/using-nodejs.76658/) ([Archive](https://archive.ph/v1nAG))
-* [How to Host NodeJS on Onyx](https://www.plesk.com/blog/product-technology/node-js-plesk-onyx/) ([Archive](https://archive.ph/uYIzZ))
-* [How to Host ExpressJS on Onyx](https://github.com/plesk/node-express)
-* [Improve NodeJS App Performance with Clustering](https://blog.appsignal.com/2021/02/03/improving-node-application-performance-with-clustering.html)
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
